@@ -3,8 +3,8 @@
 describe("Testing of EA app", () => {
     it("Login application", () => {
 
-        cy.visit("http://eaapp.somee.com");
+        cy.visit("/");
 
-       cy.login('admin','password')
+        cy.login(Cypress.env("username"), Cypress.env("password"))
     })
 })
