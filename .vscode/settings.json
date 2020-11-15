@@ -1,7 +1,8 @@
 {
     "cucumberautocomplete.steps": [
         "cypress/integration/common/*.js",
-        "cypress/integration/DuckDuckGo/*.js"
+        "cypress/integration/DuckDuckGo/*.js",
+        "cypress/integration/EAapp/*.js"
     ],
     "cucumberautocomplete.strictGherkinCompletion": true
 }
