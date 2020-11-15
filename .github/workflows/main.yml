@@ -1,13 +1,17 @@
-- name: e2E
-  # You may pin to the exact commit or the version.
-  # uses: cypress-io/github-action@8aac1d019734a107e4eaaefe2e26beb3149e5540
-  uses: cypress-io/github-action@v1.16.1
-  with:
-    # Sends test results to Cypress Dashboard
-    record: # optional
-    # Set configuration values. Separate multiple values with a comma. The values set here override any values set in your configuration file.
-    config: # optional
-    # Path to a JSON file where configuration values are set.
-    config-file: # optional, default is cypress.json
-    # Sets Cypress environment variables
-    env: # optional
+name: E2E on Chrome
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    # let's make sure our tests pass on Chrome browser
+    name: E2E on Chrome
+    steps:
+      - uses: actions/checkout@v1
+      - uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          record: true
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
