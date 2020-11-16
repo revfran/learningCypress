@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: cypress-io/github-action@v2
         with:
+          command: cypress run -e TAGS="@focus"
           browser: chrome
           record: true
         env:
