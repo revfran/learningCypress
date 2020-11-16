@@ -28,7 +28,7 @@ Cypress.Commands.add("login", (username, password) => {
 
     cy.contains("Login").click();
 
-    cy.get('#UserName').type(username);
+    cy.xpath("//input[@id='UserName']").type(username);
     cy.get('#Password').type(password);
 
     cy.get('.btn').click();
