@@ -24,6 +24,9 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+// Add a11y commands
+import 'cypress-axe'
+
 Cypress.Commands.add("login", (username, password) => {
 
     cy.contains("Login").click();
